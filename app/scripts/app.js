@@ -52,7 +52,8 @@ Instructions:
    * @return {Promise}    - A promise that passes the parsed JSON response.
    */
   function getJSON(url) {
-    return get(url).then(function(response) {
+    return get(url)
+    .then(function(response) {
       return response.json();
     });
   }
@@ -64,6 +65,16 @@ Instructions:
 
     Your code goes here!
      */
-    // getJSON('../data/earth-like-results.json')
+     getJSON('../data/earth-like-results.json')
+     .then(response =>{
+        addSearchHeader(response.query);
+        return getJSON(response.results[0]);
+     })
+     .catch(()=>{throw Error("error")
+    })
+     .then(data => {createPlanetThumb(data)
+    })
+    .catch(error=>{console.log(error);
+    addSearchHeader("unknown")})
   });
 })(document);
