@@ -1,7 +1,8 @@
 /*
 Challenge:
 
-Use what you've learned about Promises to request thumbnails in parallel but create them in the
+Use what you've learned about Promises to request thumbnails in 
+parallel but create them in the
 proper order even if all the requests haven't finished.
  */
 
@@ -15,7 +16,7 @@ proper order even if all the requests haven't finished.
 
   /**
    * Helper function to show the search query.
-   * @param {String} query - The search query.
+   * @param {String} query - The search query.gi
    */
   function addSearchHeader(query) {
     home.innerHTML = '<h2 class="page-title">query: ' + query + '</h2>';
